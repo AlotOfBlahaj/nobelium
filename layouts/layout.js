@@ -31,18 +31,18 @@ const Layout = ({
       fullWidth={fullWidth}
     >
       <article>
-        <h1 className="font-bold text-3xl text-black dark:text-white">
+        <h1 className="font-bold text-black text-3xl dark:text-white">
           {frontMatter.title}
         </h1>
         {frontMatter.type[0] !== 'Page' && (
-          <nav className="flex mt-7 items-start text-gray-500 dark:text-gray-400">
+          <nav className="flex mt-7 text-gray-500 items-start dark:text-gray-400">
             <div className="flex mb-4">
               <a href={BLOG.socialLink || '#'} className="flex">
                 <Image
                   alt={BLOG.author}
                   width={24}
                   height={24}
-                  src={`https://gravatar.com/avatar/${emailHash}`}
+                  src='/avatar.jpg'
                   className="rounded-full"
                 />
                 <p className="ml-2 md:block">{BLOG.author}</p>
@@ -80,11 +80,11 @@ const Layout = ({
           </div>
         )}
       </article>
-      <div className="flex justify-between font-medium text-gray-500 dark:text-gray-400">
+      <div className="flex font-medium text-gray-500 justify-between dark:text-gray-400">
         <a>
           <button
             onClick={() => router.push(BLOG.path || '/')}
-            className="mt-2 cursor-pointer hover:text-black dark:hover:text-gray-100"
+            className="cursor-pointer mt-2 hover:text-black dark:hover:text-gray-100"
           >
             ← {locale.POST.BACK}
           </button>
@@ -92,7 +92,7 @@ const Layout = ({
         <a>
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="mt-2 cursor-pointer hover:text-black dark:hover:text-gray-100"
+            className="cursor-pointer mt-2 hover:text-black dark:hover:text-gray-100"
           >
             ↑ {locale.POST.TOP}
           </button>
